@@ -14,7 +14,7 @@ type SenderService struct {
 
 func NewSenderService(conf config.SMTPConfig) *SenderService {
 	d := gomail.NewDialer(conf.Host, conf.Port, conf.Username, conf.Password)
-	d.TLSConfig = &tls.Config{InsecureSkipVerify: conf.InsecureSkipVerify}
+	d.TLSConfig = &tls.Config{InsecureSkipVerify: conf.InsecureSkipVerify, ServerName: conf.Host}
 	return &SenderService{
 		from:   conf.From,
 		dialer: d,

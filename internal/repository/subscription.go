@@ -40,7 +40,7 @@ func (s *SubscriptionRepository) Create(ctx context.Context, sub *model.Subscrip
 
 func (s *SubscriptionRepository) Subscriptions(ctx context.Context) ([]model.Subscription, error) {
 	var subs []model.Subscription
-	if err := s.db.WithContext(ctx).Find(subs).Error; err != nil {
+	if err := s.db.WithContext(ctx).Find(&subs).Error; err != nil {
 		return nil, errs.F("failed to query subs: %w", err)
 	}
 
