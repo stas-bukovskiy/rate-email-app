@@ -6,8 +6,9 @@ This application provides an API to get the current USD to UAH exchange rate and
 ## Setup
 
 1. Clone the repository
-2. Create `.env` file. Use `.env.example` as the example
-3. Run `docker-compose up` to start the application
+2. Go to [currencylayer.com](https://currencylayer.com/) and get the API key
+3. Create `.env` file. Use `.env.example` as the example
+4. Run `docker-compose up` to start the application
 
 ## Endpoints
 
